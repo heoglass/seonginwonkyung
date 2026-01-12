@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import IMG_TEST from "../assets/images/test1.png";
 
 const Container = styled.div({
   height: "100vh",
@@ -9,10 +10,11 @@ const Container = styled.div({
 const InvitationContainer = styled.div({
   width: "375px",
   height: "100%",
-
+  backgroundColor: "#F9F6E5",
   margin: "0 auto",
   overflowY: "scroll",
-
+  fontFamily: "areyouserious",
+  border: "1px solid red",
   "::-webkit-scrollbar": {
     display: "none",
   },
@@ -22,11 +24,45 @@ const InvitationContainer = styled.div({
   },
 });
 
+const Title = styled.p({
+  fontSize: "70px",
+  textAlign: "center",
+  margin: "50px 0",
+  color: "#F27474",
+});
+
+const MainImg = styled.img({
+  width: "100%",
+  height: "auto",
+});
+
+const SubTitle = styled.p({
+  fontSize: "40px",
+  textAlign: "center",
+  color: "#F27474",
+  margin: "25px 0",
+});
+const DatePlace = styled.p({
+  fontSize: "25px",
+  textAlign: "center",
+  color: "#F27474",
+  lineHeight: "35px",
+});
+
 export default function Main() {
   return (
     <Container>
       <InvitationContainer>
-        <p>성인이와 원경이의 모바일 청첩장</p>
+        <Title>Save the Date!</Title>
+
+        <MainImg src={IMG_TEST} />
+
+        <SubTitle>Seongin And Wonkyung</SubTitle>
+        <DatePlace>
+          31 MAY 2026
+          <br />
+          oncedrom meongdong
+        </DatePlace>
       </InvitationContainer>
     </Container>
   );

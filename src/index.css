@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "areyouserious";
+  src: url("./assets/fonts/AreYouSerious-Regular.ttf");
+}
+
 * {
   margin: 0;
   padding: 0;
