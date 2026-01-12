@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div>
       <Main />
-      <Invitation />
+      {/* <Invitation /> */}
       <ParentLetter />
       <OurStory />
     </div>
