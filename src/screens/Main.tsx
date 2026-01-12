@@ -7,28 +7,13 @@ const Container = styled.div({
 });
 
 const InvitationContainer = styled.div({
-  width: "375px",
+  width: "100%",
   height: "100%",
-  backgroundColor: "#F9F6E5",
-  margin: "0 auto",
-  overflowY: "scroll",
   fontFamily: "areyouserious",
-
-  "::-webkit-scrollbar": {
-    display: "none",
-  },
-
-  "@media (max-width: 768px)": {
-    width: "100%",
-  },
-});
-
-const Test = styled.div({
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  height: "100%",
 });
 
 const Title = styled.p({
@@ -60,18 +45,16 @@ export default function Main() {
   return (
     <Container>
       <InvitationContainer>
-        <Test>
-          <Title>Save the Date!</Title>
+        <Title>Save the Date!</Title>
 
-          <MainImg src={IMG_TEST} />
+        <MainImg src={IMG_TEST} />
 
-          <SubTitle>Seongin And Wonkyung</SubTitle>
-          <DatePlace>
-            31 MAY 2026
-            <br />
-            oncedrom meongdong
-          </DatePlace>
-        </Test>
+        <SubTitle>Seongin And Wonkyung</SubTitle>
+        <DatePlace>
+          31 MAY 2026
+          <br />
+          oncedrom meongdong
+        </DatePlace>
       </InvitationContainer>
     </Container>
   );

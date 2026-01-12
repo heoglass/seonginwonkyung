@@ -1,16 +1,38 @@
+import styled from "@emotion/styled";
 import React from "react";
 import Main from "./screens/Main";
 import Invitation from "./screens/Invitation";
 import ParentLetter from "./screens/ParentLetter";
 import OurStory from "./screens/OurStory";
 
+const Container = styled.div({
+  height: "100vh",
+  overflow: "hidden",
+});
+const InvitationContainer = styled.div({
+  width: "375px",
+  height: "100%",
+  backgroundColor: "#F9F6E5",
+  margin: "0 auto",
+  overflowY: "scroll",
+
+  "::-webkit-scrollbar": {
+    display: "none",
+  },
+
+  "@media (max-width: 768px)": {
+    width: "100%",
+  },
+});
 export default function App() {
   return (
-    <div>
-      <Main />
-      {/* <Invitation /> */}
-      <ParentLetter />
-      <OurStory />
-    </div>
+    <Container>
+      <InvitationContainer>
+        <Main />
+        <Invitation />
+        <ParentLetter />
+        <OurStory />
+      </InvitationContainer>
+    </Container>
   );
 }
