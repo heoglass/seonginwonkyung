@@ -117,10 +117,10 @@ export default function Invitation() {
         </InviteText>
         <ArrowDown src={IMG_ARROW_DOWN} />
       </InviteArea>
-      <TitleArea>
+      {/* <TitleArea>
         <Title>invite!</Title>
         <TitleLine src={IMG_TITLE_LINE} alt="" />
-      </TitleArea>
+      </TitleArea> */}
 
       <Description>
         스무살 설렘 가득한 새내기 시절 만나
