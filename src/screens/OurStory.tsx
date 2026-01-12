@@ -21,8 +21,7 @@ const BtnArea = styled.div({
   display: "flex",
   justifyContent: "center",
 });
-const SeeMoreBtn = styled.button({
-  border: "none",
+const SeeMoreBtn = styled.div({
   backgroundColor: "#FFF6C6",
   boxShadow: "0 4px 4px rgba(0,0,0,0.25)",
   fontFamily: "InstrumentSerif-Regular",
