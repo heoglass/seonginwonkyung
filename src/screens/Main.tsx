@@ -3,7 +3,6 @@ import IMG_TEST from "../assets/images/test1.png";
 
 const Container = styled.div({
   height: "100vh",
-
   overflow: "hidden",
 });
 
@@ -14,7 +13,7 @@ const InvitationContainer = styled.div({
   margin: "0 auto",
   overflowY: "scroll",
   fontFamily: "areyouserious",
-  border: "1px solid red",
+
   "::-webkit-scrollbar": {
     display: "none",
   },
@@ -24,10 +23,18 @@ const InvitationContainer = styled.div({
   },
 });
 
+const Test = styled.div({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  height: "100%",
+});
+
 const Title = styled.p({
   fontSize: "70px",
   textAlign: "center",
-  margin: "50px 0",
+  margin: "30px 0",
   color: "#F27474",
 });
 
@@ -53,16 +60,18 @@ export default function Main() {
   return (
     <Container>
       <InvitationContainer>
-        <Title>Save the Date!</Title>
+        <Test>
+          <Title>Save the Date!</Title>
 
-        <MainImg src={IMG_TEST} />
+          <MainImg src={IMG_TEST} />
 
-        <SubTitle>Seongin And Wonkyung</SubTitle>
-        <DatePlace>
-          31 MAY 2026
-          <br />
-          oncedrom meongdong
-        </DatePlace>
+          <SubTitle>Seongin And Wonkyung</SubTitle>
+          <DatePlace>
+            31 MAY 2026
+            <br />
+            oncedrom meongdong
+          </DatePlace>
+        </Test>
       </InvitationContainer>
     </Container>
   );
