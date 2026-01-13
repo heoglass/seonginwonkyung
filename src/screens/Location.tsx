@@ -98,7 +98,7 @@ export default function Location() {
   useEffect(() => {
     if (window.kakao && window.kakao.maps) {
       window.kakao.maps.load(() => {
-        console.log("kakao map loaded");
+        console.log("✅ kakao maps loaded");
       });
     }
   }, []);
@@ -116,8 +116,8 @@ export default function Location() {
       </SubTitle>
 
       <Map
-        center={{ lat: 37.55263925972441, lng: 126.93768626057455 }}
-        style={{ width: "100%", height: "350px", border: "1px solid red" }}
+        center={{ lat: 37.5610141, lng: 126.9845097 }}
+        style={{ width: "100%", height: "350px" }}
         level={3}
         zoomable
       >
