@@ -14,6 +14,7 @@ const InvitationContainer = styled.div({
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
+  backgroundColor: "#F9F6E5",
 });
 
 const Title = styled.p({

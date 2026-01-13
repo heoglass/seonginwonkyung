@@ -30,6 +30,13 @@ const SeeMoreBtn = styled.div({
 });
 
 export default function OurStory() {
+  function moveLink() {
+    window.open(
+      "https://www.notion.so/Seongin-Wonkyung-mini-interview-2e6a594d742680a48cd3f456b3ac9012?source=copy_link",
+      "_blank",
+      "noopener, noreferrer"
+    );
+  }
   return (
     <Container>
       <MainImage src={IMG_OURSTORY} />
@@ -41,7 +48,7 @@ export default function OurStory() {
       </Description>
 
       <BtnArea>
-        <SeeMoreBtn>See more....❤️</SeeMoreBtn>
+        <SeeMoreBtn onClick={moveLink}>See more....❤️</SeeMoreBtn>
       </BtnArea>
     </Container>
   );
