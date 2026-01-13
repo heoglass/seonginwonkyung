@@ -1,3 +1,10 @@
+import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+import { Navigation } from "swiper/modules";
 import styled from "@emotion/styled";
 import IMG_WEDDING_01 from "../assets/images/img01.png";
 import IMG_WEDDING_02 from "../assets/images/img02.png";
@@ -18,7 +25,6 @@ import IMG_WEDDING_16 from "../assets/images/img16.png";
 import IMG_WEDDING_17 from "../assets/images/img17.png";
 import IMG_WEDDING_18 from "../assets/images/img18.png";
 import IMG_MORE_ARROW from "../assets/images/arrow-down.png";
-import { useEffect, useState } from "react";
 
 const ImageGroup1 = [
   {
@@ -171,86 +177,53 @@ const MoreArrowUp = styled.img({
   height: "10px",
   transform: "rotate(180deg)",
 });
+
 const ModalOverlay = styled.div({
   position: "fixed",
   inset: 0,
-  backgroundColor: "rgba(0,0,0,0.8)",
+  backgroundColor: "rgba(0,0,0,0.85)",
   zIndex: 1000,
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
 });
 
-const ModalContent = styled.div({
+const ModalBox = styled.div({
   position: "relative",
-  width: "90%",
+  width: "100%",
   maxWidth: "500px",
 });
 
-const ModalImage = styled.img({
-  width: "100%",
-  borderRadius: "8px",
-});
-
-const CloseBtn = styled.button({
-  position: "absolute",
-  top: "-40px",
-  right: "0",
-  fontSize: "24px",
-  background: "none",
-  border: "none",
-  color: "#fff",
-});
-
-const Arrow = styled.button({
-  position: "absolute",
-  top: "50%",
-  transform: "translateY(-50%)",
-  background: "rgba(0,0,0,0.5)",
-  border: "none",
-  color: "#fff",
-  fontSize: "24px",
-  padding: "8px 12px",
-});
-
-const LeftArrow = styled(Arrow)({ left: "-50px" });
-const RightArrow = styled(Arrow)({ right: "-50px" });
-
-const ModalViewport = styled.div({
-  overflow: "hidden",
-  width: "100%",
-});
-
-const SlideTrack = styled.div<{ index: number }>(({ index }) => ({
-  display: "flex",
-  transform: `translateX(-${index * 100}%)`,
-  // transition: "transform 0.35s ease",
-  transition: "transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
-  willChange: "transform",
-}));
-
 const SlideImage = styled.img({
   width: "100%",
-  flexShrink: 0,
   objectFit: "contain",
   userSelect: "none",
-  touchAction: "pan-y",
 });
+
 const PageIndicator = styled.div({
   position: "absolute",
-  bottom: "-32px",
+  bottom: "16px",
   left: "50%",
   transform: "translateX(-50%)",
   color: "#fff",
   fontSize: "14px",
-  fontFamily: "MBKCorpoS",
 });
 export default function Gallery() {
   const [more, setMore] = useState<boolean>(false);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  // const [isOpen, setIsOpen] = useState<boolean>(false);
+  // const [currentIndex, setCurrentIndex] = useState<number>(0);
+  // const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const ALL_IMAGES = [...ImageGroup1, ...ImageGroup2];
+  const [isOpen, setIsOpen] = useState(false);
+  const [initialIndex, setInitialIndex] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   useEffect(() => {
     if (isOpen) {
@@ -263,29 +236,6 @@ export default function Gallery() {
       document.body.style.overflow = "";
     };
   }, [isOpen]);
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStartX(e.touches[0].clientX);
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX === null) return;
-
-    const diff = touchStartX - e.changedTouches[0].clientX;
-
-    if (Math.abs(diff) < 50) return;
-
-    diff > 0 ? goNext() : goPrev();
-    setTouchStartX(null);
-  };
-
-  const goNext = () => {
-    setCurrentIndex((prev) => (prev === ALL_IMAGES.length - 1 ? 0 : prev + 1));
-  };
-
-  const goPrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? ALL_IMAGES.length - 1 : prev - 1));
-  };
 
   return (
     <Container>
@@ -325,7 +275,7 @@ export default function Gallery() {
                 src={item.src}
                 alt={item.alt}
                 onClick={() => {
-                  setCurrentIndex(index);
+                  setInitialIndex(index);
                   setIsOpen(true);
                 }}
               />
@@ -345,29 +295,28 @@ export default function Gallery() {
 
       {isOpen && (
         <ModalOverlay onClick={() => setIsOpen(false)}>
-          <ModalContent
-            onClick={(e) => e.stopPropagation()}
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
-          >
-            <CloseBtn onClick={() => setIsOpen(false)}>×</CloseBtn>
-
-            <LeftArrow onClick={goPrev}>‹</LeftArrow>
-
-            <ModalViewport>
-              <SlideTrack index={currentIndex}>
-                {ALL_IMAGES.map((img) => (
-                  <SlideImage key={img.id} src={img.src} alt={img.alt} />
-                ))}
-              </SlideTrack>
-            </ModalViewport>
-
-            <RightArrow onClick={goNext}>›</RightArrow>
+          <ModalBox onClick={(e) => e.stopPropagation()}>
+            <Swiper
+              modules={[Navigation]}
+              initialSlide={initialIndex}
+              loop
+              navigation
+              slidesPerView={1}
+              onSlideChange={(swiper: any) =>
+                setCurrentPage(swiper.realIndex + 1)
+              }
+            >
+              {ALL_IMAGES.map((img, idx) => (
+                <SwiperSlide key={idx}>
+                  <SlideImage src={img.src} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
 
             <PageIndicator>
-              {currentIndex + 1} / {ALL_IMAGES.length}
+              {currentPage} / {ALL_IMAGES.length}
             </PageIndicator>
-          </ModalContent>
+          </ModalBox>
         </ModalOverlay>
       )}
     </Container>
