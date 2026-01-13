@@ -15,7 +15,7 @@ const Title = styled.p({
   textAlign: "center",
   marginBottom: "12px",
   fontFamily: "areyouserious",
-  color: "#ddd",
+  color: "#FFC8EF",
 });
 const SubTitle = styled.p({
   fontSize: "16px",
@@ -33,7 +33,7 @@ const MoveMapArea = styled.div({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  backgroundColor: "#F27474",
+  backgroundColor: "#ddd",
   opacity: 0.7,
 });
 
