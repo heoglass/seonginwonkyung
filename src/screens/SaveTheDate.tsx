@@ -157,7 +157,7 @@ export default function SaveTheDate() {
         </CalendarWeeks>
         <CalendarDays>
           {emptyDays.map((_, index) => (
-            <div key={_}></div>
+            <div key={index}></div>
           ))}
           {days.map((day) => (
             <CalendarDaysItem key={day}>

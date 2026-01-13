@@ -3,6 +3,7 @@ import { Map, MapMarker } from "react-kakao-maps-sdk";
 import ICO_NMAP from "../assets/icons/n-map.webp";
 import ICO_KMAP from "../assets/icons/k-map.png";
 import ICO_TMAP from "../assets/icons/t-map.webp";
+import { useEffect } from "react";
 
 const Container = styled.div({
   padding: "30px 15px",
@@ -79,21 +80,28 @@ const Dot = styled.div({
   marginRight: "8px",
   backgroundColor: "#000",
   alignSelf: "baseline",
-  marginTop: "6px",
+  marginTop: "8px",
 });
 
-const BusCarItem = styled.div({
-  display: "flex",
-  alignItems: "center",
-  paddingLeft: "16px",
-  marginBottom: "4px",
-});
+// const BusCarItem = styled.div({
+//   display: "flex",
+//   alignItems: "center",
+//   paddingLeft: "16px",
+//   marginBottom: "4px",
+// });
 
-const BusCarTitle = styled.p({
-  marginBottom: "8px",
-});
+// const BusCarTitle = styled.p({
+//   marginBottom: "8px",
+// });
 
 export default function Location() {
+  useEffect(() => {
+    if (window.kakao && window.kakao.maps) {
+      window.kakao.maps.load(() => {
+        console.log("kakao map loaded");
+      });
+    }
+  }, []);
   return (
     <Container>
       <Title>*Location*</Title>
@@ -109,7 +117,7 @@ export default function Location() {
 
       <Map
         center={{ lat: 37.55263925972441, lng: 126.93768626057455 }}
-        style={{ width: "100%", height: "350px" }}
+        style={{ width: "100%", height: "350px", border: "1px solid red" }}
         level={3}
         zoomable
       >
