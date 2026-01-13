@@ -121,9 +121,7 @@ export default function Location() {
         level={3}
         zoomable
       >
-        <MapMarker
-          position={{ lat: 37.55263925972441, lng: 126.93768626057455 }}
-        />
+        <MapMarker position={{ lat: 37.5610141, lng: 126.9845097 }} />
       </Map>
 
       <MoveMapArea>
