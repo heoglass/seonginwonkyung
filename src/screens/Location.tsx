@@ -15,7 +15,7 @@ const Title = styled.p({
   textAlign: "center",
   marginBottom: "12px",
   fontFamily: "areyouserious",
-  color: "#FFC8EF",
+  color: "#ddd",
 });
 const SubTitle = styled.p({
   fontSize: "16px",

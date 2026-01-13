@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import type { Swiper as SwiperType } from "swiper";
 
 import { Navigation } from "swiper/modules";
 import styled from "@emotion/styled";
@@ -25,6 +26,8 @@ import IMG_WEDDING_16 from "../assets/images/img16.png";
 import IMG_WEDDING_17 from "../assets/images/img17.png";
 import IMG_WEDDING_18 from "../assets/images/img18.png";
 import IMG_MORE_ARROW from "../assets/images/arrow-down.png";
+import IMG_ARROW_LEFT from "../assets/icons/arrow-left.png";
+import IMG_ARROW_RIGHT from "../assets/icons/arrow-left.png";
 
 const ImageGroup1 = [
   {
@@ -208,6 +211,26 @@ const PageIndicator = styled.div({
   color: "#fff",
   fontSize: "14px",
 });
+const NavButton = styled.button({
+  position: "absolute",
+  top: "50%",
+  transform: "translateY(-50%)",
+  background: "none",
+  border: "none",
+  zIndex: 999,
+});
+const PrevButton = styled(NavButton)({
+  left: "12px",
+});
+
+const NextButton = styled(NavButton)({
+  right: "12px",
+  transform: "rotate(180deg)",
+});
+
+const SwiperArrow = styled.img({
+  width: "9px",
+});
 export default function Gallery() {
   const [more, setMore] = useState<boolean>(false);
   // const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -217,6 +240,8 @@ export default function Gallery() {
   const [isOpen, setIsOpen] = useState(false);
   const [initialIndex, setInitialIndex] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
+  const prevRef = useRef<HTMLButtonElement | null>(null);
+  const nextRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -296,12 +321,28 @@ export default function Gallery() {
       {isOpen && (
         <ModalOverlay onClick={() => setIsOpen(false)}>
           <ModalBox onClick={(e) => e.stopPropagation()}>
+            <PrevButton className="custom-prev" ref={prevRef}>
+              <SwiperArrow src={IMG_ARROW_LEFT} />
+            </PrevButton>
+
+            <NextButton className="custom-next" ref={nextRef}>
+              <SwiperArrow src={IMG_ARROW_RIGHT} />
+            </NextButton>
             <Swiper
               modules={[Navigation]}
               initialSlide={initialIndex}
               loop
-              navigation
               slidesPerView={1}
+              onBeforeInit={(swiper: SwiperType) => {
+                if (typeof swiper.params.navigation !== "boolean") {
+                  swiper.params.navigation!.prevEl = prevRef.current;
+                  swiper.params.navigation!.nextEl = nextRef.current;
+                }
+              }}
+              navigation={{
+                prevEl: ".custom-prev",
+                nextEl: ".custom-next",
+              }}
               onSlideChange={(swiper: any) =>
                 setCurrentPage(swiper.realIndex + 1)
               }
