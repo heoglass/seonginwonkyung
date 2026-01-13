@@ -34,6 +34,7 @@ const MoveMapArea = styled.div({
   alignItems: "center",
   justifyContent: "space-between",
   backgroundColor: "#F27474",
+  opacity: 0.7,
 });
 
 const MoveMapItem = styled.div({
