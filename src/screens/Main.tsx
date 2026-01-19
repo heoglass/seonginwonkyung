@@ -4,7 +4,7 @@ import IMG_ARROW_DOWN from "../assets/images/arrow-down.png";
 import { motion } from "framer-motion";
 
 const Container = styled.div({
-  height: "100vh",
+  height: "auto",
   // overflow: "hidden",
 });
 
