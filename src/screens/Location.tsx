@@ -15,7 +15,7 @@ const Title = styled.p({
   textAlign: "center",
   marginBottom: "12px",
   fontFamily: "areyouserious",
-  color: "#FFC8EF",
+  color: "#F27474",
 });
 const SubTitle = styled.p({
   fontSize: "16px",
@@ -54,7 +54,7 @@ const MoveMapIcon = styled.img({
 const MoveMapText = styled.p({});
 
 const TransPortationArea = styled.div({
-  padding: "20px 16px 12px",
+  padding: "20px 16px 0",
 });
 
 const TransPortationItem = styled.div({

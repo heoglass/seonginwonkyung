@@ -7,6 +7,7 @@ import OurStory from "./screens/OurStory";
 import Gallery from "./screens/Gallery";
 import SaveTheDate from "./screens/SaveTheDate";
 import Location from "./screens/Location";
+import Information from "./screens/Information";
 
 const Container = styled.div({
   height: "100vh",
@@ -38,6 +39,7 @@ export default function App() {
         <Gallery />
         <SaveTheDate />
         <Location />
+        <Information />
       </InvitationContainer>
     </Container>
   );

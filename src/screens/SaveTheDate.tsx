@@ -9,7 +9,7 @@ const Container = styled.div({
 const Title = styled.p({
   fontSize: "30px",
   fontFamily: "areyouserious",
-  color: "#FFC8EF",
+  color: "#F27474",
   textAlign: "center",
   marginBottom: "10px",
 });
