@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Container = styled.div({
   height: "100vh",
-  overflow: "hidden",
+  // overflow: "hidden",
 });
 
 const InvitationContainer = styled.div({
@@ -72,7 +72,7 @@ export default function Main() {
           <br />
           oncedrom meongdong
         </DatePlace>
-        {/* <InviteArea>
+        <InviteArea>
           <InviteText>
             성인이와 원경이의
             <br />
@@ -91,7 +91,7 @@ export default function Main() {
               ease: "easeInOut",
             }}
           />
-        </InviteArea> */}
+        </InviteArea>
       </InvitationContainer>
     </Container>
   );
