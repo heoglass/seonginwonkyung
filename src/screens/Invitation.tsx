@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import IMG_ARROW_DOWN from "../assets/images/arrow-down.png";
+
 import IMG_TITLE_LINE from "../assets/images/invite-line.png";
 import IMG_SEONGIN from "../assets/images/seongin.png";
 import IMG_WONKYUNG from "../assets/images/wonkyung.png";
@@ -9,21 +9,6 @@ const Container = styled.div({
   backgroundColor: "#F9F6E5",
 });
 
-const InviteArea = styled.div({
-  width: "100%",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  padding: "30px 0",
-});
-const InviteText = styled.p({
-  textAlign: "center",
-  fontFamily: "MBKCorpoS",
-  marginBottom: "20px",
-});
-const ArrowDown = styled.img({
-  width: "16px",
-});
 const TitleArea = styled.div({
   position: "relative",
   height: "50px",
@@ -109,14 +94,6 @@ export default function Invitation() {
 
   return (
     <Container>
-      <InviteArea>
-        <InviteText>
-          성인이와 원경이의
-          <br />
-          특별한 결혼식에 당신을 초대합니다.
-        </InviteText>
-        <ArrowDown src={IMG_ARROW_DOWN} />
-      </InviteArea>
       <TitleArea>
         <Title>invite!</Title>
         <TitleLine src={IMG_TITLE_LINE} alt="" />
