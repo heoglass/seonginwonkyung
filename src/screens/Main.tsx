@@ -4,19 +4,19 @@ import IMG_ARROW_DOWN from "../assets/images/arrow-down.png";
 import { motion } from "framer-motion";
 
 const Container = styled.div({
-  height: "auto",
-  // overflow: "hidden",
+  minHeight: "100dvh",
+  display: "flex",
 });
 
 const InvitationContainer = styled.div({
   width: "100%",
-  height: "100%",
-  fontFamily: "areyouserious",
+  minHeight: "100%",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
   backgroundColor: "#F9F6E5",
+  fontFamily: "areyouserious",
 });
 
 const Title = styled.p({
