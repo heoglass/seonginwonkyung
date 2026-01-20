@@ -48,7 +48,7 @@ const InviteArea = styled.div({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  padding: "30px 0",
+  padding: "30px 0 50px",
 });
 const InviteText = styled.p({
   textAlign: "center",

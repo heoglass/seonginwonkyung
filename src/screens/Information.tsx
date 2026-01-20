@@ -2,6 +2,12 @@ import styled from "@emotion/styled";
 import IMG_ARROW_DOWN from "../assets/icons/info-arrow-down.png";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import InfoFirst from "./sub-componenet/InfoFirst";
+import InfoSecond from "./sub-componenet/InfoSecond";
+import InfoThird from "./sub-componenet/InfoThird";
+import InfoFourth from "./sub-componenet/InfoFourth";
+import InfoFifth from "./sub-componenet/InfoFifth";
+import InfoSixth from "./sub-componenet/InfoSixth";
 
 const InfoGroup = [
   {
@@ -126,7 +132,14 @@ export default function Information() {
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.35, ease: "easeInOut" }}
                 >
-                  <InfoContentInner>dddddd</InfoContentInner>
+                  <InfoContentInner>
+                    {item.id === 1 && <InfoFirst />}
+                    {item.id === 2 && <InfoSecond />}
+                    {item.id === 3 && <InfoThird />}
+                    {item.id === 4 && <InfoFourth />}
+                    {item.id === 5 && <InfoFifth />}
+                    {item.id === 6 && <InfoSixth />}
+                  </InfoContentInner>
                 </InfoContent>
               )}
             </AnimatePresence>
