@@ -33,16 +33,20 @@ const MoveMapArea = styled.div({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  backgroundColor: "#ddd",
+  columnGap: "10px",
+  marginTop: "10px",
   opacity: 0.7,
 });
 
 const MoveMapItem = styled.div({
   width: "100%",
-  padding: "15px 0",
+  padding: "12px 0",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+
+  borderRadius: "6px",
+  boxShadow: "1px 1px 3px rgba(0, 0, 0, 0.3)",
 });
 const MoveMapIcon = styled.img({
   width: "16px",
@@ -96,6 +100,10 @@ const Dot = styled.div({
 // });
 
 export default function Location() {
+  const PLACE_NAME = "온즈드롬 명동";
+  const LAT = 37.5610141;
+  const LNG = 126.9845097;
+
   useEffect(() => {
     if (window.kakao && window.kakao.maps) {
       window.kakao.maps.load(() => {
@@ -103,6 +111,42 @@ export default function Location() {
       });
     }
   }, []);
+
+  const checkDevice = () => {
+    const userAgent = window.navigator.userAgent;
+    if (userAgent.match(/(iPhone|iPod|iPad)/)) {
+      return "ios";
+    } else if (userAgent.match(/(Android)/)) {
+      return "android";
+    } else {
+      return "other";
+    }
+  };
+  // const NMAP_PLACE_ID = 1354417881;
+  // const KMAP_PLACE_ID = 443961579;
+  function openMapLink(name: string) {
+    let url = "";
+
+    if (name === "naver") {
+      // 네이버 지도
+      url = `https://naver.me/5T4AcKcZ`;
+    }
+
+    if (name === "kakao") {
+      // 카카오맵
+      url = `https://kko.to/5mh8_1aw5y`;
+    }
+
+    if (name === "tmap") {
+      // 티맵 (웹)
+      url = `https://apis.openapi.sk.com/tmap/app/routes?name=${encodeURIComponent(
+        PLACE_NAME
+      )}&lon=${LNG}&lat=${LAT}`;
+    }
+
+    window.open(url, "_blank");
+  }
+
   return (
     <Container>
       <Title>*Location*</Title>
@@ -126,17 +170,44 @@ export default function Location() {
       </Map>
 
       <MoveMapArea>
-        <MoveMapItem>
+        <MoveMapItem
+          onClick={() => {
+            openMapLink("naver");
+          }}
+        >
           <MoveMapIcon src={ICO_NMAP} />
           <MoveMapText>네이버 지도</MoveMapText>
         </MoveMapItem>
-        <p>|</p>
-        <MoveMapItem>
+        {/* <p>|</p> */}
+        <MoveMapItem
+          onClick={() => {
+            openMapLink("kakao");
+          }}
+        >
           <MoveMapIcon src={ICO_KMAP} />
           <MoveMapText>카카오 네비</MoveMapText>
         </MoveMapItem>
-        <p>|</p>
-        <MoveMapItem>
+        {/* <p>|</p> */}
+        <MoveMapItem
+          onClick={() => {
+            switch (checkDevice()) {
+              case "ios":
+              case "android": {
+                const params = new URLSearchParams({
+                  goalx: "37.5610141",
+                  goaly: "126.9845097",
+                  goalName: "온즈드롬 명동",
+                });
+                window.open(`tmap://route?${params.toString()}`, "_self");
+                break;
+              }
+              default: {
+                alert("모바일에서 확인하실 수 있습니다.");
+                break;
+              }
+            }
+          }}
+        >
           <MoveMapIcon src={ICO_TMAP} />
           <MoveMapText>티맵</MoveMapText>
         </MoveMapItem>
