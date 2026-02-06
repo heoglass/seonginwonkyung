@@ -11,7 +11,7 @@ const Container = styled.div({
 });
 
 const Title = styled.p({
-  fontSize: "30px",
+  fontSize: "32px",
   textAlign: "center",
   marginBottom: "12px",
   fontFamily: "areyouserious",
@@ -35,7 +35,7 @@ const MoveMapArea = styled.div({
   justifyContent: "space-between",
   columnGap: "10px",
   marginTop: "10px",
-  opacity: 0.7,
+  // opacity: 0.7,
 });
 
 const MoveMapItem = styled.div({
@@ -44,7 +44,7 @@ const MoveMapItem = styled.div({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-
+  backgroundColor: "#fff",
   borderRadius: "6px",
   boxShadow: "1px 1px 3px rgba(0, 0, 0, 0.3)",
 });

@@ -129,7 +129,7 @@ const Container = styled.div({
 });
 
 const Title = styled.p({
-  fontSize: "30px",
+  fontSize: "32px",
   fontFamily: "areyouserious",
   color: "#F27474",
   textAlign: "center",
@@ -267,32 +267,6 @@ export default function Gallery() {
       <Title>*Gallery*</Title>
 
       <ImageContianer>
-        {/* {ImageGroup1.map((item, index) => (
-          <ImageItemContainer key={item.id}>
-            <WeddingImageItem
-              src={item.src}
-              alt={item.alt}
-              onClick={() => {
-                setCurrentIndex(index);
-                setIsOpen(true);
-              }}
-            />
-          </ImageItemContainer>
-        ))}
-
-        {more &&
-          ImageGroup2.map((item, index) => (
-            <ImageItemContainer key={item.id}>
-              <WeddingImageItem
-                src={item.src}
-                alt={item.alt}
-                onClick={() => {
-                  setCurrentIndex(index);
-                  setIsOpen(true);
-                }}
-              />
-            </ImageItemContainer>
-          ))} */}
         {ALL_IMAGES.slice(0, more ? ALL_IMAGES.length : ImageGroup1.length).map(
           (item, index) => (
             <ImageItemContainer key={item.id}>

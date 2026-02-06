@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import IMG_ARROW_DOWN from "../assets/icons/info-arrow-down.png";
+// import IMG_BOTTOM from "../assets/images/bottom-image.png";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import InfoFirst from "./sub-componenet/InfoFirst";
@@ -36,12 +37,14 @@ const InfoGroup = [
   },
 ];
 const Container = styled.div({
-  backgroundColor: "#F9F6E5",
-  padding: "0 15px",
+  backgroundColor: "#fff",
+});
+const TitleArea = styled.div({
+  padding: "10px 15px 0",
 });
 const Title = styled.p({
   fontFamily: "areyouserious",
-  fontSize: "30px",
+  fontSize: "32px",
   color: "#F27474",
   textAlign: "center",
   marginBottom: "20px",
@@ -51,6 +54,7 @@ const BorderArea = styled.div({
   borderTop: "1px solid #F27474",
   marginBottom: "20px",
   position: "relative",
+  padding: "0 15px",
 });
 const LeftDot = styled.div({
   width: "6px",
@@ -72,6 +76,7 @@ const RightDot = styled.div({
 });
 const InfoItemContainer = styled.div({
   marginBottom: "30px",
+  padding: "0 15px",
 });
 const InfoItem = styled.div({});
 const InfoTitleArea = styled.div({
@@ -100,7 +105,13 @@ const InfoContentInner = styled.div({
   fontSize: "14px",
   lineHeight: "1.6",
 });
-
+// const BottomImgArea = styled.div({
+//   widht: "100%",
+// });
+// const BottomImg = styled.img({
+//   widht: "100%",
+//   height: "auto",
+// });
 export default function Information() {
   const [openId, setOpenId] = useState<number | null>(null);
 
@@ -110,11 +121,14 @@ export default function Information() {
 
   return (
     <Container>
-      <Title>*Information*</Title>
-      <BorderArea>
-        <LeftDot />
-        <RightDot />
-      </BorderArea>
+      <TitleArea>
+        <Title>*Information*</Title>
+
+        <BorderArea>
+          <LeftDot />
+          <RightDot />
+        </BorderArea>
+      </TitleArea>
 
       <InfoItemContainer>
         {InfoGroup.map((item, index) => (
@@ -146,6 +160,9 @@ export default function Information() {
           </InfoItem>
         ))}
       </InfoItemContainer>
+      {/* <BottomImgArea>
+        <BottomImg src={IMG_BOTTOM} alt="하단 이미지" />
+      </BottomImgArea> */}
     </Container>
   );
 }

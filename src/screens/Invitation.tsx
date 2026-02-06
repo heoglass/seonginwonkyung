@@ -134,7 +134,7 @@ export default function Invitation() {
           src={IMG_CALL}
           alt=""
           onClick={() => {
-            CallButton("01079220524");
+            CallButton("01040367383");
           }}
         />
       </ParentNameItem1>
@@ -146,7 +146,7 @@ export default function Invitation() {
           src={IMG_CALL}
           alt=""
           onClick={() => {
-            CallButton("01079220524");
+            CallButton("01073773235");
           }}
         />
       </ParentNameItem2>

@@ -7,7 +7,7 @@ const Container = styled.div({
   backgroundColor: "#F9F6E5",
 });
 const Title = styled.p({
-  fontSize: "30px",
+  fontSize: "32px",
   fontFamily: "areyouserious",
   color: "#F27474",
   textAlign: "center",
@@ -36,6 +36,7 @@ const CalendarWeeksItem = styled.div({
   justifyContent: "center",
   padding: "10px 0",
   color: "#5c5c5c",
+  fontSize: "18px",
 });
 
 const CalendarDays = styled.div({
@@ -52,6 +53,7 @@ const CalendarDaysItem = styled.div({
   padding: "10px 0",
   color: "#5c5c5c",
   position: "relative",
+  fontSize: "18px",
 });
 const WeddingDayImage = styled.img({
   position: "absolute",
@@ -79,6 +81,7 @@ const TimeItem = styled.div({
   padding: "10px",
   borderRadius: "10px",
   boxShadow: "0 5px 5px rgba(0,0,0,0.25)",
+  backgroundColor: "#fff",
 });
 const TimeTile = styled.p({
   fontSize: "12px",

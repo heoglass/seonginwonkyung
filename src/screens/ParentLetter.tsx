@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import IMG_SEONGIN_CHILD from "../assets/images/seongin-child.png";
 import IMG_WONKYUNG_CHILD from "../assets/images/wonkyung-child.png";
-import IMG_LETTER1 from "../assets/images/letter2.png";
+import IMG_LETTER1 from "../assets/images/letter1.png";
 import IMG_LETTER2 from "../assets/images/letter2.png";
 
 const Container = styled.div({
@@ -10,7 +10,7 @@ const Container = styled.div({
 });
 const Title = styled.p({
   fontFamily: "areyouserious",
-  fontSize: "30px",
+  fontSize: "32px",
   color: "#FFC8EF",
   textAlign: "center",
   marginBottom: "30px",
