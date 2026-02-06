@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import IMG_ARROW_DOWN from "../assets/icons/info-arrow-down.png";
-// import IMG_BOTTOM from "../assets/images/bottom-image.png";
+import IMG_BOTTOM from "../assets/images/bottom-image.png";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import InfoFirst from "./sub-componenet/InfoFirst";
@@ -37,6 +37,7 @@ const InfoGroup = [
   },
 ];
 const Container = styled.div({
+  width: "100%",
   backgroundColor: "#fff",
 });
 const TitleArea = styled.div({
@@ -105,13 +106,10 @@ const InfoContentInner = styled.div({
   fontSize: "14px",
   lineHeight: "1.6",
 });
-// const BottomImgArea = styled.div({
-//   widht: "100%",
-// });
-// const BottomImg = styled.img({
-//   widht: "100%",
-//   height: "auto",
-// });
+const BottomImg = styled.img({
+  width: "100%",
+  height: "auto",
+});
 export default function Information() {
   const [openId, setOpenId] = useState<number | null>(null);
 
@@ -160,9 +158,7 @@ export default function Information() {
           </InfoItem>
         ))}
       </InfoItemContainer>
-      {/* <BottomImgArea>
-        <BottomImg src={IMG_BOTTOM} alt="하단 이미지" />
-      </BottomImgArea> */}
+      <BottomImg src={IMG_BOTTOM} alt="하단 이미지" />
     </Container>
   );
 }

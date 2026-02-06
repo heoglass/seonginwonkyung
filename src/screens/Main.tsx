@@ -35,7 +35,7 @@ const TitleArea = styled.div({
 const TitleImg = styled.img({
   width: "100%",
 });
-const Test = styled.div({
+const YellowBackground = styled.div({
   width: "100%",
   backgroundColor: "#F9F6E5",
 });
@@ -79,7 +79,7 @@ export default function Main() {
           <TitleImg src={IMG_MAIN_TEXT} alt="" />
         </TitleArea>
 
-        <Test>
+        <YellowBackground>
           <MainImg src={IMG_MAIN2} />
 
           <SubTitle>Wonkyung And Seongin</SubTitle>
@@ -115,7 +115,7 @@ export default function Main() {
               }}
             />
           </InviteArea>
-        </Test>
+        </YellowBackground>
       </InvitationContainer>
     </MainSection>
   );
