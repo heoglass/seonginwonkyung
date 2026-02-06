@@ -83,11 +83,8 @@ export default function Main() {
           <MainImg src={IMG_MAIN2} />
 
           <SubTitle>Wonkyung And Seongin</SubTitle>
-          <DatePlace>
-            31 MAY 2026
-            <br />
-            oncedrom meongdong
-          </DatePlace>
+          <DatePlace>31 MAY 2026</DatePlace>
+          {/* <DatePlace>oncedrom meongdong</DatePlace> */}
           <InviteArea>
             <InviteText
               animate={{
