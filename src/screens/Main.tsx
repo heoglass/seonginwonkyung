@@ -22,16 +22,16 @@ const InvitationContainer = styled.div({
   flexDirection: "column",
   justifyContent: "space-between", // ⭐ 핵심
   alignItems: "center",
-  padding: "16px 0 env(safe-area-inset-bottom)",
+  padding: "10px 0 env(safe-area-inset-bottom)",
   backgroundColor: "#fff",
 });
 
-const TitleArea = styled.div({
-  // fontSize: "70px",
-  // textAlign: "center",
-  // margin: "30px 0",
-  // color: "#F27474",
-});
+// const TitleArea = styled.div({
+//   fontSize: "70px",
+//   textAlign: "center",
+//   margin: "30px 0",
+//   color: "#F27474",
+// });
 const TitleImg = styled.img({
   width: "100%",
 });
@@ -48,7 +48,7 @@ const SubTitle = styled.p({
   fontSize: "37px",
   textAlign: "center",
   color: "#E71419",
-  margin: "25px 0",
+  margin: "16px 0",
 });
 const DatePlace = styled.p({
   fontSize: "25px",
@@ -61,7 +61,7 @@ const InviteArea = styled.div({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  padding: "20px 0 50px",
+  padding: "14px 0 50px",
 });
 const InviteText = styled(motion.p)({
   textAlign: "center",
@@ -75,9 +75,9 @@ export default function Main() {
   return (
     <MainSection>
       <InvitationContainer>
-        <TitleArea>
-          <TitleImg src={IMG_MAIN_TEXT} alt="" />
-        </TitleArea>
+        {/* <TitleArea> */}
+        <TitleImg src={IMG_MAIN_TEXT} alt="" />
+        {/* </TitleArea> */}
 
         <YellowBackground>
           <MainImg src={IMG_MAIN2} />
