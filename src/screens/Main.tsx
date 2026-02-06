@@ -11,8 +11,6 @@ import { motion } from "framer-motion";
 //   flexDirection: "column",
 // });
 const MainSection = styled.section({
-  minHeight: "100svh", // 모바일 주소창 제외한 안전 영역
-  maxHeight: "100dvh", // 최신 브라우저 대응
   display: "flex",
 });
 const InvitationContainer = styled.div({
