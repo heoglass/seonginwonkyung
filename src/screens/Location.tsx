@@ -194,9 +194,9 @@ export default function Location() {
               case "ios":
               case "android": {
                 const params = new URLSearchParams({
-                  x: "37.5610141",
-                  y: "126.9845097",
-                  name: "온즈드롬 명동",
+                  goalx: "37.5610141",
+                  goaly: "126.9845097",
+                  goalName: "온즈드롬 명동",
                 });
                 window.open(`tmap://route?${params.toString()}`, "_self");
                 break;
