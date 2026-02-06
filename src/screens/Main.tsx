@@ -22,7 +22,7 @@ const InvitationContainer = styled.div({
   flexDirection: "column",
   justifyContent: "space-between", // ⭐ 핵심
   alignItems: "center",
-  padding: "10px 0 env(safe-area-inset-bottom)",
+  padding: "0 0 env(safe-area-inset-bottom)",
   backgroundColor: "#fff",
 });
 
