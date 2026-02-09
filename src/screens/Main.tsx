@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 // });
 const MainSection = styled.section({
   display: "flex",
+  overflow: "hidden",
 });
 const InvitationContainer = styled.div({
   width: "100%",
