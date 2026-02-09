@@ -47,14 +47,15 @@ const MainImg = styled.img({
 const SubTitle = styled.p({
   fontSize: "37px",
   textAlign: "center",
-  color: "#E71419",
-  margin: "16px 0",
+  // color: "#E71419",
+  color: "#4A393A",
+  margin: "0 0 10px",
 });
 const DatePlace = styled.p({
   fontSize: "25px",
   textAlign: "center",
   color: "#E71419",
-  lineHeight: "35px",
+  // lineHeight: "35px",
 });
 const InviteArea = styled.div({
   width: "100%",
@@ -79,12 +80,12 @@ export default function Main() {
         <TitleImg src={IMG_MAIN_TEXT} alt="" />
         {/* </TitleArea> */}
 
+        <SubTitle>Wonkyung And Seongin</SubTitle>
         <YellowBackground>
           <MainImg src={IMG_MAIN2} />
 
-          <SubTitle>Wonkyung And Seongin</SubTitle>
           <DatePlace>31 MAY 2026</DatePlace>
-          {/* <DatePlace>oncedrom meongdong</DatePlace> */}
+          <DatePlace>Onzedroom Myeongdong</DatePlace>
           <InviteArea>
             <InviteText
               animate={{
