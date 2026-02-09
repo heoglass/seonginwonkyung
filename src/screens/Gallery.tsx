@@ -278,16 +278,19 @@ const SwiperArrow = styled.img({
 });
 
 const CloseButton = styled.div({
-  position: "fixed", // ⭐️ 핵심
+  position: "fixed",
   top: "16px",
   right: "16px",
-  width: "20px",
-  height: "20px",
+  width: "30px",
+  height: "30px",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  zIndex: 2000,
+
   cursor: "pointer",
+  zIndex: 3000, // ⭐️ Swiper보다 위
+  touchAction: "manipulation", // ⭐️ 핵심
+  pointerEvents: "auto",
 });
 const CloseIcon = styled.img({
   width: "16px",
@@ -355,54 +358,56 @@ export default function Gallery() {
       </MoreBtnArea>
 
       {isOpen && (
-        <>
-          <CloseButton onClick={() => setIsOpen(false)}>
+        <ModalOverlay onClick={() => setIsOpen(false)}>
+          <CloseButton
+            onClick={(e) => {
+              setIsOpen(false);
+            }}
+          >
             <CloseIcon src={IMG_CLOSE_WHITE} />
           </CloseButton>
-          <ModalOverlay onClick={() => setIsOpen(false)}>
-            <ModalBox onClick={(e) => e.stopPropagation()}>
-              <PrevButton className="custom-prev" ref={prevRef}>
-                <SwiperArrow src={IMG_ARROW_LEFT} />
-              </PrevButton>
+          <ModalBox onClick={(e) => e.stopPropagation()}>
+            <PrevButton className="custom-prev" ref={prevRef}>
+              <SwiperArrow src={IMG_ARROW_LEFT} />
+            </PrevButton>
 
-              <NextButton className="custom-next" ref={nextRef}>
-                <SwiperArrow src={IMG_ARROW_RIGHT} />
-              </NextButton>
-              <Swiper
-                modules={[Navigation]}
-                initialSlide={initialIndex}
-                loop
-                slidesPerView={1}
-                onBeforeInit={(swiper: SwiperType) => {
-                  if (typeof swiper.params.navigation !== "boolean") {
-                    swiper.params.navigation!.prevEl = prevRef.current;
-                    swiper.params.navigation!.nextEl = nextRef.current;
-                  }
-                }}
-                style={{ height: "100vh" }}
-                navigation={{
-                  prevEl: ".custom-prev",
-                  nextEl: ".custom-next",
-                }}
-                onSlideChange={(swiper: any) =>
-                  setCurrentPage(swiper.realIndex + 1)
+            <NextButton className="custom-next" ref={nextRef}>
+              <SwiperArrow src={IMG_ARROW_RIGHT} />
+            </NextButton>
+            <Swiper
+              modules={[Navigation]}
+              initialSlide={initialIndex}
+              loop
+              slidesPerView={1}
+              onBeforeInit={(swiper: SwiperType) => {
+                if (typeof swiper.params.navigation !== "boolean") {
+                  swiper.params.navigation!.prevEl = prevRef.current;
+                  swiper.params.navigation!.nextEl = nextRef.current;
                 }
-              >
-                {ALL_IMAGES.map((img, idx) => (
-                  <SwiperSlide key={idx}>
-                    <SlideItem>
-                      <SlideImage src={img.full} />
-                    </SlideItem>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+              }}
+              style={{ height: "100vh" }}
+              navigation={{
+                prevEl: ".custom-prev",
+                nextEl: ".custom-next",
+              }}
+              onSlideChange={(swiper: any) =>
+                setCurrentPage(swiper.realIndex + 1)
+              }
+            >
+              {ALL_IMAGES.map((img, idx) => (
+                <SwiperSlide key={idx}>
+                  <SlideItem>
+                    <SlideImage src={img.full} />
+                  </SlideItem>
+                </SwiperSlide>
+              ))}
+            </Swiper>
 
-              <PageIndicator>
-                {currentPage} / {ALL_IMAGES.length}
-              </PageIndicator>
-            </ModalBox>
-          </ModalOverlay>
-        </>
+            <PageIndicator>
+              {currentPage} / {ALL_IMAGES.length}
+            </PageIndicator>
+          </ModalBox>
+        </ModalOverlay>
       )}
     </Container>
   );
