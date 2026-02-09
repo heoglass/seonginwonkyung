@@ -33,7 +33,7 @@ const InvitationContainer = styled.div({
 //   color: "#F27474",
 // });
 const TitleImg = styled.img({
-  width: "100%",
+  width: "117%",
 });
 const YellowBackground = styled.div({
   width: "100%",
