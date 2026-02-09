@@ -25,101 +25,138 @@ import IMG_WEDDING_15 from "../assets/images/img15.png";
 import IMG_WEDDING_16 from "../assets/images/img16.png";
 import IMG_WEDDING_17 from "../assets/images/img17.png";
 import IMG_WEDDING_18 from "../assets/images/img18.png";
+import IMG_GWEDDING_01 from "../assets/images/wedding-img01.jpg";
+import IMG_GWEDDING_02 from "../assets/images/wedding-img02.jpg";
+import IMG_GWEDDING_03 from "../assets/images/wedding-img03.jpg";
+import IMG_GWEDDING_04 from "../assets/images/wedding-img04.jpg";
+import IMG_GWEDDING_05 from "../assets/images/wedding-img05.jpg";
+import IMG_GWEDDING_06 from "../assets/images/wedding-img06.jpg";
+import IMG_GWEDDING_07 from "../assets/images/wedding-img07.jpg";
+import IMG_GWEDDING_08 from "../assets/images/wedding-img08.jpg";
+import IMG_GWEDDING_09 from "../assets/images/wedding-img09.jpg";
+import IMG_GWEDDING_10 from "../assets/images/wedding-img10.jpg";
+import IMG_GWEDDING_11 from "../assets/images/wedding-img11.jpg";
+import IMG_GWEDDING_12 from "../assets/images/wedding-img12.jpg";
+import IMG_GWEDDING_13 from "../assets/images/wedding-img13.jpg";
+import IMG_GWEDDING_14 from "../assets/images/wedding-img14.jpg";
+import IMG_GWEDDING_15 from "../assets/images/wedding-img15.jpg";
+import IMG_GWEDDING_16 from "../assets/images/wedding-img16.jpg";
+import IMG_GWEDDING_17 from "../assets/images/wedding-img17.jpg";
+import IMG_GWEDDING_18 from "../assets/images/wedding-img18.jpg";
 import IMG_MORE_ARROW from "../assets/images/arrow-down.png";
 import IMG_ARROW_LEFT from "../assets/icons/arrow-left.png";
 import IMG_ARROW_RIGHT from "../assets/icons/arrow-left.png";
+import IMG_CLOSE_WHITE from "../assets/icons/close-white.png";
 
 const ImageGroup1 = [
   {
     id: 1,
-    src: IMG_WEDDING_01,
+    thumb: IMG_WEDDING_01,
+    full: IMG_GWEDDING_01,
     alt: "웨딩촬영 사진01",
   },
   {
     id: 2,
-    src: IMG_WEDDING_02,
+    thumb: IMG_WEDDING_02,
+    full: IMG_GWEDDING_02,
     alt: "웨딩촬영 사진02",
   },
   {
     id: 3,
-    src: IMG_WEDDING_03,
+    thumb: IMG_WEDDING_03,
+    full: IMG_GWEDDING_03,
     alt: "웨딩촬영 사진03",
   },
   {
     id: 4,
-    src: IMG_WEDDING_04,
+    thumb: IMG_WEDDING_04,
+    full: IMG_GWEDDING_04,
     alt: "웨딩촬영 사진04",
   },
   {
     id: 5,
-    src: IMG_WEDDING_05,
+    thumb: IMG_WEDDING_05,
+    full: IMG_GWEDDING_05,
     alt: "웨딩촬영 사진05",
   },
   {
     id: 6,
-    src: IMG_WEDDING_06,
+    thumb: IMG_WEDDING_06,
+    full: IMG_GWEDDING_06,
     alt: "웨딩촬영 사진06",
   },
   {
     id: 7,
-    src: IMG_WEDDING_07,
+    thumb: IMG_WEDDING_07,
+    full: IMG_GWEDDING_07,
     alt: "웨딩촬영 사진07",
   },
   {
     id: 8,
-    src: IMG_WEDDING_08,
+    thumb: IMG_WEDDING_08,
+    full: IMG_GWEDDING_08,
     alt: "웨딩촬영 사진08",
   },
   {
     id: 9,
-    src: IMG_WEDDING_09,
+    thumb: IMG_WEDDING_09,
+    full: IMG_GWEDDING_09,
     alt: "웨딩촬영 사진09",
   },
 ];
 const ImageGroup2 = [
   {
     id: 10,
-    src: IMG_WEDDING_10,
+    thumb: IMG_WEDDING_10,
+    full: IMG_GWEDDING_10,
     alt: "웨딩촬영 사진10",
   },
   {
     id: 11,
-    src: IMG_WEDDING_11,
+    thumb: IMG_WEDDING_11,
+    full: IMG_GWEDDING_11,
     alt: "웨딩촬영 사진11",
   },
   {
     id: 12,
-    src: IMG_WEDDING_12,
+    thumb: IMG_WEDDING_12,
+    full: IMG_GWEDDING_12,
     alt: "웨딩촬영 사진12",
   },
   {
     id: 13,
-    src: IMG_WEDDING_13,
+    thumb: IMG_WEDDING_13,
+    full: IMG_GWEDDING_13,
     alt: "웨딩촬영 사진13",
   },
   {
     id: 14,
-    src: IMG_WEDDING_14,
+    thumb: IMG_WEDDING_14,
+    full: IMG_GWEDDING_14,
     alt: "웨딩촬영 사진14",
   },
   {
     id: 15,
-    src: IMG_WEDDING_15,
+    thumb: IMG_WEDDING_15,
+    full: IMG_GWEDDING_15,
     alt: "웨딩촬영 사진15",
   },
   {
     id: 16,
-    src: IMG_WEDDING_16,
+    thumb: IMG_WEDDING_16,
+    full: IMG_GWEDDING_16,
     alt: "웨딩촬영 사진16",
   },
   {
     id: 17,
-    src: IMG_WEDDING_17,
+    thumb: IMG_WEDDING_17,
+    full: IMG_GWEDDING_17,
     alt: "웨딩촬영 사진17",
   },
   {
     id: 18,
-    src: IMG_WEDDING_18,
+    thumb: IMG_WEDDING_18,
+    full: IMG_GWEDDING_18,
     alt: "웨딩촬영 사진18",
   },
 ];
@@ -196,7 +233,14 @@ const ModalBox = styled.div({
   width: "100%",
   maxWidth: "500px",
 });
-
+const SlideItem = styled.div({
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  pointerEvents: "none",
+});
 const SlideImage = styled.img({
   width: "100%",
   objectFit: "contain",
@@ -210,6 +254,7 @@ const PageIndicator = styled.div({
   transform: "translateX(-50%)",
   color: "#fff",
   fontSize: "14px",
+  opacity: 0,
 });
 const NavButton = styled.button({
   position: "absolute",
@@ -230,6 +275,23 @@ const NextButton = styled(NavButton)({
 
 const SwiperArrow = styled.img({
   width: "9px",
+});
+
+const CloseButton = styled.div({
+  position: "fixed", // ⭐️ 핵심
+  top: "16px",
+  right: "16px",
+  width: "20px",
+  height: "20px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  zIndex: 2000,
+  cursor: "pointer",
+});
+const CloseIcon = styled.img({
+  width: "16px",
+  height: "16px",
 });
 export default function Gallery() {
   const [more, setMore] = useState<boolean>(false);
@@ -271,7 +333,7 @@ export default function Gallery() {
           (item, index) => (
             <ImageItemContainer key={item.id}>
               <WeddingImageItem
-                src={item.src}
+                src={item.thumb}
                 alt={item.alt}
                 onClick={() => {
                   setInitialIndex(index);
@@ -293,46 +355,54 @@ export default function Gallery() {
       </MoreBtnArea>
 
       {isOpen && (
-        <ModalOverlay onClick={() => setIsOpen(false)}>
-          <ModalBox onClick={(e) => e.stopPropagation()}>
-            <PrevButton className="custom-prev" ref={prevRef}>
-              <SwiperArrow src={IMG_ARROW_LEFT} />
-            </PrevButton>
+        <>
+          <CloseButton onClick={() => setIsOpen(false)}>
+            <CloseIcon src={IMG_CLOSE_WHITE} />
+          </CloseButton>
+          <ModalOverlay onClick={() => setIsOpen(false)}>
+            <ModalBox onClick={(e) => e.stopPropagation()}>
+              <PrevButton className="custom-prev" ref={prevRef}>
+                <SwiperArrow src={IMG_ARROW_LEFT} />
+              </PrevButton>
 
-            <NextButton className="custom-next" ref={nextRef}>
-              <SwiperArrow src={IMG_ARROW_RIGHT} />
-            </NextButton>
-            <Swiper
-              modules={[Navigation]}
-              initialSlide={initialIndex}
-              loop
-              slidesPerView={1}
-              onBeforeInit={(swiper: SwiperType) => {
-                if (typeof swiper.params.navigation !== "boolean") {
-                  swiper.params.navigation!.prevEl = prevRef.current;
-                  swiper.params.navigation!.nextEl = nextRef.current;
+              <NextButton className="custom-next" ref={nextRef}>
+                <SwiperArrow src={IMG_ARROW_RIGHT} />
+              </NextButton>
+              <Swiper
+                modules={[Navigation]}
+                initialSlide={initialIndex}
+                loop
+                slidesPerView={1}
+                onBeforeInit={(swiper: SwiperType) => {
+                  if (typeof swiper.params.navigation !== "boolean") {
+                    swiper.params.navigation!.prevEl = prevRef.current;
+                    swiper.params.navigation!.nextEl = nextRef.current;
+                  }
+                }}
+                style={{ height: "100vh" }}
+                navigation={{
+                  prevEl: ".custom-prev",
+                  nextEl: ".custom-next",
+                }}
+                onSlideChange={(swiper: any) =>
+                  setCurrentPage(swiper.realIndex + 1)
                 }
-              }}
-              navigation={{
-                prevEl: ".custom-prev",
-                nextEl: ".custom-next",
-              }}
-              onSlideChange={(swiper: any) =>
-                setCurrentPage(swiper.realIndex + 1)
-              }
-            >
-              {ALL_IMAGES.map((img, idx) => (
-                <SwiperSlide key={idx}>
-                  <SlideImage src={img.src} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
+              >
+                {ALL_IMAGES.map((img, idx) => (
+                  <SwiperSlide key={idx}>
+                    <SlideItem>
+                      <SlideImage src={img.full} />
+                    </SlideItem>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
 
-            <PageIndicator>
-              {currentPage} / {ALL_IMAGES.length}
-            </PageIndicator>
-          </ModalBox>
-        </ModalOverlay>
+              <PageIndicator>
+                {currentPage} / {ALL_IMAGES.length}
+              </PageIndicator>
+            </ModalBox>
+          </ModalOverlay>
+        </>
       )}
     </Container>
   );
