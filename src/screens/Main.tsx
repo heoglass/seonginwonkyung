@@ -1,9 +1,11 @@
+import { useEffect } from "react";
+import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 // import IMG_MAIN from "../assets/images/main.png";
 import IMG_MAIN2 from "../assets/images/main2.jpg";
 import IMG_MAIN_TEXT from "../assets/images/main-text.png";
 import IMG_ARROW_DOWN from "../assets/images/arrow-down.png";
-import { motion } from "framer-motion";
+import IMG_SHARE from "../assets/icons/share.png";
 
 // const Container = styled.div({
 //   // minHeight: "100dvh",
@@ -73,7 +75,58 @@ const InviteText = styled(motion.p)({
 const ArrowDown = styled(motion.img)({
   width: "16px",
 });
+const ShareButton = styled.button({
+  display: "none",
+  width: "48px",
+  height: "48px",
+  borderRadius: "12px",
+  backgroundColor: "#fff",
+  color: "#3A1D1D",
+  fontSize: "16px",
+  fontWeight: 600,
+  border: "none",
+  // position: "fixed",
+  // right: "16px",
+  // bottom: "20px",
+  // zIndex: 200,
+});
+const ShareIcon = styled.img({
+  width: "20px",
+  height: "20px",
+});
 export default function Main() {
+  useEffect(() => {
+    if (!window.Kakao) return;
+
+    if (!window.Kakao.isInitialized()) {
+      window.Kakao.init("8a7c9634adf7a61725f893ab57ee0478");
+      // CRA면 process.env.REACT_APP_KAKAO_JS_KEY
+    }
+  }, []);
+
+  function ShareKakao() {
+    window.Kakao.Share.sendDefault({
+      objectType: "feed",
+      content: {
+        title: "함성인 ❤️ 이원경 결혼합니다.",
+        description: "2026년 5월 31일 오후 12시 30분",
+        imageUrl: "https://seonginwonkyung.vercel.app/share/wedding-img02.png",
+        link: {
+          mobileWebUrl: "https://seonginwonkyung.vercel.app/",
+          webUrl: "https://seonginwonkyung.vercel.app/",
+        },
+      },
+      buttons: [
+        {
+          title: "청첩장 보기",
+          link: {
+            mobileWebUrl: "https://seonginwonkyung.vercel.app/",
+            webUrl: "https://seonginwonkyung.vercel.app/",
+          },
+        },
+      ],
+    });
+  }
   return (
     <MainSection>
       <InvitationContainer>
@@ -118,6 +171,9 @@ export default function Main() {
             />
           </InviteArea>
         </YellowBackground>
+        <ShareButton onClick={() => ShareKakao()}>
+          <ShareIcon src={IMG_SHARE} />
+        </ShareButton>
       </InvitationContainer>
     </MainSection>
   );
