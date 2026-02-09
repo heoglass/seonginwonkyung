@@ -80,7 +80,7 @@ export default function Main() {
         <TitleImg src={IMG_MAIN_TEXT} alt="" />
         {/* </TitleArea> */}
 
-        <SubTitle>Wonkyung And Seongin</SubTitle>
+        <SubTitle>Wonkyung & Seongin</SubTitle>
         <YellowBackground>
           <MainImg src={IMG_MAIN2} />
 
@@ -100,7 +100,7 @@ export default function Main() {
             >
               성인이와 원경이의
               <br />
-              특별한 결혼식에 당신을 초대합니다.
+              결혼식에 당신을 초대합니다.
             </InviteText>
             <ArrowDown
               src={IMG_ARROW_DOWN}
