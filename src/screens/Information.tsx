@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import IMG_ARROW_DOWN from "../assets/icons/info-arrow-down.png";
-import IMG_BOTTOM from "../assets/images/bottom-image.png";
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import InfoFirst from "./sub-componenet/InfoFirst";
@@ -8,7 +8,6 @@ import InfoSecond from "./sub-componenet/InfoSecond";
 import InfoThird from "./sub-componenet/InfoThird";
 import InfoFourth from "./sub-componenet/InfoFourth";
 import InfoFifth from "./sub-componenet/InfoFifth";
-import InfoSixth from "./sub-componenet/InfoSixth";
 
 const InfoGroup = [
   {
@@ -25,23 +24,19 @@ const InfoGroup = [
   },
   {
     id: 4,
-    title: "결혼식 식순 (오래 즐겨요)",
-  },
-  {
-    id: 5,
     title: "웨딩홀 근처 여행 가이드",
   },
   {
-    id: 6,
+    id: 5,
     title: "결혼식 오는길 들으면 좋은 노래 셋리스트",
   },
 ];
 const Container = styled.div({
   width: "100%",
-  backgroundColor: "#fff",
+  backgroundColor: "#F9F6E5",
 });
 const TitleArea = styled.div({
-  padding: "10px 15px 0",
+  padding: "0 15px",
 });
 const Title = styled.p({
   fontFamily: "areyouserious",
@@ -85,7 +80,6 @@ const InfoTitleArea = styled.div({
   justifyContent: "space-between",
   alignItems: "center",
   padding: "18px 0",
-  borderBottom: "1px solid #DCDCDC",
 });
 const InfoItemTitle = styled.p({
   fontFamily: "MBKCorpoS",
@@ -106,10 +100,7 @@ const InfoContentInner = styled.div({
   fontSize: "14px",
   lineHeight: "1.6",
 });
-const BottomImg = styled.img({
-  width: "100%",
-  height: "auto",
-});
+
 export default function Information() {
   const [openId, setOpenId] = useState<number | null>(null);
 
@@ -120,7 +111,7 @@ export default function Information() {
   return (
     <Container>
       <TitleArea>
-        <Title>*Information*</Title>
+        <Title>Information</Title>
 
         <BorderArea>
           <LeftDot />
@@ -131,7 +122,12 @@ export default function Information() {
       <InfoItemContainer>
         {InfoGroup.map((item, index) => (
           <InfoItem key={item.id} onClick={() => toggle(item.id)}>
-            <InfoTitleArea>
+            <InfoTitleArea
+              style={{
+                borderBottom:
+                  index === InfoGroup.length - 1 ? "" : "1px solid #DCDCDC",
+              }}
+            >
               <InfoItemTitle>{item.title}</InfoItemTitle>
               <InfoArrow src={IMG_ARROW_DOWN} open={openId === item.id} />
             </InfoTitleArea>
@@ -150,7 +146,6 @@ export default function Information() {
                     {item.id === 3 && <InfoThird />}
                     {item.id === 4 && <InfoFourth />}
                     {item.id === 5 && <InfoFifth />}
-                    {item.id === 6 && <InfoSixth />}
                   </InfoContentInner>
                 </InfoContent>
               )}
@@ -158,7 +153,6 @@ export default function Information() {
           </InfoItem>
         ))}
       </InfoItemContainer>
-      <BottomImg src={IMG_BOTTOM} alt="하단 이미지" />
     </Container>
   );
 }

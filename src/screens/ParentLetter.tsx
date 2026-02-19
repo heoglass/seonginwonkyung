@@ -5,8 +5,8 @@ import IMG_LETTER1 from "../assets/images/letter1.png";
 import IMG_LETTER2 from "../assets/images/letter2.png";
 
 const Container = styled.div({
-  backgroundColor: "#5B4A39",
-  padding: "20px 15px 100px",
+  backgroundColor: "#4A393A",
+  padding: "20px 15px 70px",
 });
 const Title = styled.p({
   fontFamily: "areyouserious",
@@ -26,7 +26,7 @@ const ImageGrid = styled.div({
 });
 const ChildImageItem1 = styled.div({
   position: "relative",
-  marginBottom: "100px",
+  marginBottom: "70px",
 });
 const ChildImageItem2 = styled.div({
   position: "relative",
@@ -40,14 +40,14 @@ const LetterImage1 = styled.img({
   width: "345px",
   height: "auto",
   position: "absolute",
-  bottom: "-80px",
+  bottom: "-45px",
   left: "-16px",
 });
 const LetterImage2 = styled.img({
   width: "345px",
   height: "auto",
   position: "absolute",
-  bottom: "-80px",
+  bottom: "-45px",
   left: "-16px",
 });
 

@@ -1,9 +1,69 @@
 import styled from "@emotion/styled";
 import IMG_OURSTORY from "../assets/images/our-story.png";
+import IMG_BOTTOM from "../assets/images/bottom-image.png";
 
 const Container = styled.div({
   backgroundColor: "#fff",
-  padding: "40px 0 0",
+  padding: "20px 0",
+  width: "100%",
+});
+const NoticeArea = styled.div({
+  width: "100%",
+  padding: "0 16px",
+  marginBottom: "30px",
+});
+const NoticeTitleArea = styled.div({
+  width: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  marginBottom: "10px",
+});
+const NoticeLeftArea = styled.div({
+  width: "100%",
+  borderTop: "1px solid #4A393A",
+  position: "relative",
+});
+const NoticeLeftBox = styled.div({
+  width: "5px",
+  height: "5px",
+  backgroundColor: "#4A393A",
+  transform: "rotate(45deg)",
+  position: "absolute",
+  top: "-3.5px",
+  left: "0",
+});
+const NoticeTitle = styled.p({
+  fontFamily: "areyouserious",
+  fontSize: "36px",
+  color: "#4A393A",
+  margin: "0 16px",
+});
+const NoticeRightArea = styled.div({
+  width: "100%",
+  borderTop: "1px solid #4A393A",
+  position: "relative",
+});
+const NoticeRightBox = styled.div({
+  width: "5px",
+  height: "5px",
+  backgroundColor: "#4A393A",
+  transform: "rotate(45deg)",
+  position: "absolute",
+  top: "-3.5px",
+  right: "0",
+});
+const NoticeDescription = styled.p({
+  fontFamily: "Dovemayo",
+  color: "#000",
+  fontSize: "14px",
+  lineHeight: "25px",
+  textAlign: "center",
+});
+const BottomImg = styled.img({
+  width: "100%",
+  height: "auto",
+  marginBottom: "30px",
 });
 const MainImage = styled.img({
   width: "100%",
@@ -39,6 +99,37 @@ export default function OurStory() {
   }
   return (
     <Container>
+      <NoticeArea>
+        <NoticeTitleArea>
+          <NoticeLeftArea>
+            <NoticeLeftBox />
+          </NoticeLeftArea>
+          <NoticeTitle>Notice!!</NoticeTitle>
+          <NoticeRightArea>
+            <NoticeRightBox />
+          </NoticeRightArea>
+        </NoticeTitleArea>
+
+        <NoticeDescription>
+          저희 예식은 1부와 2부로 나누어 진행됩니다.
+          <br />
+          2부에서는 사랑과 웃음이 가득히 함께 즐길 수 있는
+          <br />
+          작은 파티가 준비되어 있습니다.
+          <br />
+          <br />
+          예식과 식사, 2부 행사까지
+          <br />
+          약 12:30 ~ 14:30 동안 진행될 예정이며,
+          <br />
+          편한 마음으로 함께 즐겨주시면 감사하겠습니다.
+          <br />
+          <br />
+          일정이 있으신 분들은 중간에 편히 이동하셔도 괜찮습니다.
+        </NoticeDescription>
+      </NoticeArea>
+      <BottomImg src={IMG_BOTTOM} alt="하단 이미지" />
+
       <MainImage src={IMG_OURSTORY} />
 
       <Description>

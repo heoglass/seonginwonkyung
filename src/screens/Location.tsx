@@ -2,11 +2,11 @@ import styled from "@emotion/styled";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 import ICO_NMAP from "../assets/icons/n-map.webp";
 import ICO_KMAP from "../assets/icons/k-map.png";
-import ICO_TMAP from "../assets/icons/t-map.webp";
+// import ICO_TMAP from "../assets/icons/t-map.webp";
 import { useEffect } from "react";
 
 const Container = styled.div({
-  padding: "30px 15px",
+  padding: "30px 15px 0",
   fontFamily: "MBKCorpoS",
 });
 
@@ -34,7 +34,7 @@ const MoveMapArea = styled.div({
   alignItems: "center",
   justifyContent: "space-between",
   columnGap: "10px",
-  marginTop: "10px",
+  margin: "10px 0 20px",
   // opacity: 0.7,
 });
 
@@ -58,7 +58,7 @@ const MoveMapIcon = styled.img({
 const MoveMapText = styled.p({});
 
 const TransPortationArea = styled.div({
-  padding: "20px 16px 0",
+  padding: "0",
 });
 
 const TransPortationItem = styled.div({
@@ -112,16 +112,16 @@ export default function Location() {
     }
   }, []);
 
-  const checkDevice = () => {
-    const userAgent = window.navigator.userAgent;
-    if (userAgent.match(/(iPhone|iPod|iPad)/)) {
-      return "ios";
-    } else if (userAgent.match(/(Android)/)) {
-      return "android";
-    } else {
-      return "other";
-    }
-  };
+  // const checkDevice = () => {
+  //   const userAgent = window.navigator.userAgent;
+  //   if (userAgent.match(/(iPhone|iPod|iPad)/)) {
+  //     return "ios";
+  //   } else if (userAgent.match(/(Android)/)) {
+  //     return "android";
+  //   } else {
+  //     return "other";
+  //   }
+  // };
   // const NMAP_PLACE_ID = 1354417881;
   // const KMAP_PLACE_ID = 443961579;
   function openMapLink(name: string) {
@@ -188,7 +188,7 @@ export default function Location() {
           <MoveMapText>카카오 네비</MoveMapText>
         </MoveMapItem>
         {/* <p>|</p> */}
-        <MoveMapItem
+        {/* <MoveMapItem
           onClick={() => {
             switch (checkDevice()) {
               case "ios":
@@ -210,7 +210,7 @@ export default function Location() {
         >
           <MoveMapIcon src={ICO_TMAP} />
           <MoveMapText>티맵</MoveMapText>
-        </MoveMapItem>
+        </MoveMapItem> */}
       </MoveMapArea>
       <TransPortationArea>
         <TransPortationItem>
