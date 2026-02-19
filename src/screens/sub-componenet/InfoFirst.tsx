@@ -47,14 +47,14 @@ const PinkTitleArea = styled.div({
 // });
 const PinkTitle = styled.div({
   fontFamily: "MBKCorpoS",
-  fontSize: "16px",
+  fontSize: "18px",
   color: "#F27474",
 });
 const AccountArea = styled.div<{ idx: number }>(({ idx }) => ({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  marginBottom: idx === 2 ? "20px" : "10px",
+  marginBottom: idx === 2 ? "30px" : "28px",
 }));
 const AccountTextArea = styled.div({});
 const AccountText = styled.p({
