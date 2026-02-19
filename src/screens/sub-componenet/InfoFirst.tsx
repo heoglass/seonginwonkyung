@@ -3,36 +3,30 @@ import IMG_COPY from "../../assets/icons/copy.png";
 
 const GroomGroup = [
   {
-    type: "신랑",
-    accountNumber: "111-111-1111",
-    name: "국민은행 함성인",
+    type: "👨‍🦱 신랑 아버지 함희성",
+    accountNumber: "IBK기업은행 015-048217-01-018",
   },
   {
-    type: "신랑 아버지",
-    accountNumber: "111-111-1111",
-    name: "국민은행 함희성",
+    type: "👩 신랑 어머니 김현숙",
+    accountNumber: "우리은행 1040-426-147789",
   },
   {
-    type: "신랑 어머니",
-    accountNumber: "111-111-1111",
-    name: "국민은행 김현숙",
+    type: "🤵🏻 신랑 함성인",
+    accountNumber: "KB국민은행 022202-04-102973",
   },
 ];
 const BrideGroup = [
   {
-    type: "신부",
-    accountNumber: "111-111-1111",
-    name: "우리은행 이원경",
+    type: "🥸 신부 아버지 이우경",
+    accountNumber: "농협 721074-52-107794",
   },
   {
-    type: "신부 아버지",
-    accountNumber: "111-111-1111",
-    name: "우리은행 이우경",
+    type: "👩🏻‍🎨️ 신부 어머니 허연옥",
+    accountNumber: "농협 356-0071-529363",
   },
   {
-    type: "신부 어머니",
-    accountNumber: "111-111-1111",
-    name: "우리은행 허연옥",
+    type: "️👰🏻‍♀ 신부 이원경",
+    accountNumber: "KB국민은행 337101-04-215493",
   },
 ];
 
@@ -43,14 +37,14 @@ const PinkTitleArea = styled.div({
   display: "flex",
   alignItems: "center",
   columnGap: "6px",
-  marginBottom: "10px",
+  marginBottom: "5px",
 });
-const PinkDot = styled.div({
-  width: "6px",
-  height: "6px",
-  borderRadius: "50%",
-  backgroundColor: "#F27474",
-});
+// const PinkDot = styled.div({
+//   width: "6px",
+//   height: "6px",
+//   borderRadius: "50%",
+//   backgroundColor: "#F27474",
+// });
 const PinkTitle = styled.div({
   fontFamily: "MBKCorpoS",
   fontSize: "16px",
@@ -70,7 +64,7 @@ const AccountText = styled.p({
 });
 const CopyBtn = styled.button({
   border: "none",
-  padding: "6px 12px",
+  padding: "8px 16px",
   backgroundColor: "#fff",
   fontFamily: "MBKCorpoS",
   fontSize: "16px",
@@ -95,7 +89,6 @@ export default function InfoFirst() {
   return (
     <Container>
       <PinkTitleArea>
-        <PinkDot />
         <PinkTitle>신랑측 계좌번호</PinkTitle>
       </PinkTitleArea>
       {GroomGroup.map((item, index) => (
@@ -105,8 +98,6 @@ export default function InfoFirst() {
               {item.type}
               <br />
               {item.accountNumber}
-              <br />
-              {item.name}
             </AccountText>
           </AccountTextArea>
           <CopyBtn
@@ -120,7 +111,6 @@ export default function InfoFirst() {
         </AccountArea>
       ))}
       <PinkTitleArea>
-        <PinkDot />
         <PinkTitle>신부측 계좌번호</PinkTitle>
       </PinkTitleArea>
       {BrideGroup.map((item, index) => (
@@ -130,8 +120,6 @@ export default function InfoFirst() {
               {item.type}
               <br />
               {item.accountNumber}
-              <br />
-              {item.name}
             </AccountText>
           </AccountTextArea>
           <CopyBtn

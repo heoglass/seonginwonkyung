@@ -47,25 +47,25 @@ const Title = styled.p({
 });
 const BorderArea = styled.div({
   width: "100%",
-  borderTop: "1px solid #F27474",
+  borderTop: "1px solid #FF0006",
   marginBottom: "20px",
   position: "relative",
   padding: "0 15px",
 });
 const LeftDot = styled.div({
-  width: "6px",
-  height: "6px",
-  borderRadius: "50%",
-  backgroundColor: "#F27474",
+  width: "5px",
+  height: "5px",
+  transform: "rotate(45deg)",
+  backgroundColor: "#FF0006",
   position: "absolute",
   left: 0,
   top: "-3.5px",
 });
 const RightDot = styled.div({
-  width: "6px",
-  height: "6px",
-  borderRadius: "50%",
-  backgroundColor: "#F27474",
+  width: "5px",
+  height: "5px",
+  transform: "rotate(45deg)",
+  backgroundColor: "#FF0006",
   position: "absolute",
   right: 0,
   top: "-3.5px",
