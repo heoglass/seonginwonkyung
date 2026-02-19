@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import IMG_WEDDINGDAY from "../assets/images/weddingday-heart.png";
 
 const Container = styled.div({
-  padding: "40px 15px 0",
+  padding: "10px 15px 0",
   backgroundColor: "#F9F6E5",
 });
 const Title = styled.p({
@@ -16,7 +16,8 @@ const Title = styled.p({
 const SubTitle = styled.p({
   fontFamily: "MBKCorpoS",
   textAlign: "center",
-  marginBottom: "20px",
+  fontSize: "16px",
+  lineHeight: "29px",
 });
 const CalendarArea = styled.div({
   // borderTop: "1px solid #d9d9d9",
@@ -151,6 +152,7 @@ export default function SaveTheDate() {
     <Container>
       <Title>*Save the date*</Title>
       <SubTitle>2026년 5월 31일 일요일 오후12시 30분</SubTitle>
+      <SubTitle>온즈드롬 명동</SubTitle>
 
       <CalendarArea>
         <CalendarWeeks>

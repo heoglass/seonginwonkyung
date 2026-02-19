@@ -17,7 +17,7 @@ const TitleArea = styled.div({
 const Title = styled.p({
   fontSize: "40px",
   fontFamily: "InstrumentSerif-Regular",
-  color: "#F27474",
+  color: "#E71F19",
   zIndex: 2,
   position: "absolute",
   left: "50%",
@@ -35,20 +35,20 @@ const TitleLine = styled.img({
 });
 
 const Description = styled.p({
-  fontFamily: "KyoboHandwriting2020",
+  fontFamily: "KyoboHandwriting2022khn",
   fontStyle: "normal",
   color: "#4F3E24",
   fontSize: "16px",
-  lineHeight: "28px",
+  lineHeight: "26px",
   textAlign: "center",
 });
 const Description2 = styled.p({
-  fontFamily: "KyoboHandwriting2020",
+  fontFamily: "KyoboHandwriting2022khn",
   fontWeight: "700",
   color: "#000",
   fontSize: "18px",
   textAlign: "center",
-  margin: "20px 0",
+  margin: "20px 0 40px",
 });
 const ImageArea = styled.div({
   display: "flex",
@@ -65,7 +65,7 @@ const Wonkyung = styled.img({
 });
 const ParentNameItem1 = styled.div({
   width: "100%",
-  fontFamily: "KyoboHandwriting2020",
+  fontFamily: "KyoboHandwriting2022khn",
   fontSize: "16px",
   display: "flex",
   justifyContent: "center",
@@ -73,7 +73,7 @@ const ParentNameItem1 = styled.div({
 });
 const ParentNameItem2 = styled.div({
   width: "100%",
-  fontFamily: "KyoboHandwriting2020",
+  fontFamily: "KyoboHandwriting2022khn",
   fontSize: "16px",
   display: "flex",
   justifyContent: "center",
@@ -120,7 +120,7 @@ export default function Invitation() {
         <br />
         오래도록 감사히 간직하겠습니다.
       </Description>
-      <Description2>신랑 함성인 신부 이원경 올림</Description2>
+      <Description2>신랑 함성인 & 신부 이원경 올림</Description2>
 
       <ImageArea>
         <SeongIn src={IMG_SEONGIN} />

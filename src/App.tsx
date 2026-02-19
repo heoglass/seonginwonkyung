@@ -34,10 +34,10 @@ export default function App() {
       <InvitationContainer>
         <Main />
         <Invitation />
+        <SaveTheDate />
         <ParentLetter />
         <OurStory />
         <Gallery />
-        <SaveTheDate />
         <Location />
         <Information />
       </InvitationContainer>

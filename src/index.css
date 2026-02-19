@@ -22,6 +22,10 @@
   font-family: "Dovemayo";
   src: url("./assets/fonts/Dovemayo_wild.ttf");
 }
+@font-face {
+  font-family: "KyoboHandwriting2022khn";
+  src: url("./assets/fonts/KyoboHandwriting2022khn.ttf");
+}
 
 * {
   margin: 0;

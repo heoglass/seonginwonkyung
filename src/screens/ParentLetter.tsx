@@ -6,14 +6,18 @@ import IMG_LETTER2 from "../assets/images/letter2.png";
 
 const Container = styled.div({
   backgroundColor: "#5B4A39",
-  padding: "40px 15px 100px",
+  padding: "20px 15px 100px",
 });
 const Title = styled.p({
   fontFamily: "areyouserious",
   fontSize: "32px",
-  color: "#FFC8EF",
+  color: "#F49B96",
   textAlign: "center",
   marginBottom: "30px",
+  span: {
+    fontFamily: "Dovemayo",
+    fontSize: "17px",
+  },
 });
 const ImageGrid = styled.div({
   display: "flex",
@@ -50,7 +54,9 @@ const LetterImage2 = styled.img({
 export default function ParentLetter() {
   return (
     <Container>
-      <Title>*Letter of mom*</Title>
+      <Title>
+        Letter of mom <span>: 어머니들의 한마디</span>
+      </Title>
       <ImageGrid>
         <ChildImageItem1>
           <ChildImage src={IMG_SEONGIN_CHILD} />

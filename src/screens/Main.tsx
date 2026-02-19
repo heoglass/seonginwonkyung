@@ -36,7 +36,7 @@ const InvitationContainer = styled.div({
 //   color: "#F27474",
 // });
 const TitleImg = styled.img({
-  width: "117%",
+  width: "100%",
 });
 const YellowBackground = styled.div({
   width: "100%",
@@ -48,17 +48,16 @@ const MainImg = styled.img({
 });
 
 const SubTitle = styled.p({
-  fontSize: "37px",
+  fontSize: "34px",
   textAlign: "center",
   // color: "#E71419",
   color: "#4A393A",
-  margin: "0 0 10px",
+  margin: "-15px 0 40px",
 });
 const DatePlace = styled.p({
   fontSize: "25px",
   textAlign: "center",
   color: "#E71419",
-  // lineHeight: "35px",
 });
 const InviteArea = styled.div({
   width: "100%",
@@ -70,7 +69,8 @@ const InviteArea = styled.div({
 const InviteText = styled(motion.p)({
   textAlign: "center",
   fontFamily: "MBKCorpoS",
-  marginBottom: "20px",
+  marginBottom: "16px",
+  fontSize: "13px",
 });
 const ArrowDown = styled(motion.img)({
   width: "16px",
@@ -138,7 +138,7 @@ export default function Main() {
         <YellowBackground>
           <MainImg src={IMG_MAIN2} />
 
-          <DatePlace>31 MAY 2026</DatePlace>
+          <DatePlace>MAY .31. 2026</DatePlace>
           <DatePlace>Onzedroom Myeongdong</DatePlace>
           <InviteArea>
             <InviteText
