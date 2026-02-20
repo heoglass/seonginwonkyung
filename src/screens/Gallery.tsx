@@ -25,6 +25,9 @@ import IMG_WEDDING_15 from "../assets/images/img15.png";
 import IMG_WEDDING_16 from "../assets/images/img16.png";
 import IMG_WEDDING_17 from "../assets/images/img17.png";
 import IMG_WEDDING_18 from "../assets/images/img18.png";
+import IMG_WEDDING_19 from "../assets/images/img19.png";
+import IMG_WEDDING_20 from "../assets/images/img20.png";
+import IMG_WEDDING_21 from "../assets/images/img21.png";
 import IMG_GWEDDING_01 from "../assets/images/wedding-img01.jpg";
 import IMG_GWEDDING_02 from "../assets/images/wedding-img02.jpg";
 import IMG_GWEDDING_03 from "../assets/images/wedding-img03.jpg";
@@ -43,6 +46,9 @@ import IMG_GWEDDING_15 from "../assets/images/wedding-img15.jpg";
 import IMG_GWEDDING_16 from "../assets/images/wedding-img16.jpg";
 import IMG_GWEDDING_17 from "../assets/images/wedding-img17.jpg";
 import IMG_GWEDDING_18 from "../assets/images/wedding-img18.jpg";
+import IMG_GWEDDING_19 from "../assets/images/wedding-img19.jpg";
+import IMG_GWEDDING_20 from "../assets/images/wedding-img20.jpg";
+import IMG_GWEDDING_21 from "../assets/images/wedding-img21.jpg";
 import IMG_MORE_ARROW from "../assets/images/arrow-down.png";
 import IMG_ARROW_LEFT from "../assets/icons/arrow-left.png";
 import IMG_ARROW_RIGHT from "../assets/icons/arrow-left.png";
@@ -159,6 +165,24 @@ const ImageGroup2 = [
     full: IMG_GWEDDING_18,
     alt: "웨딩촬영 사진18",
   },
+  {
+    id: 19,
+    thumb: IMG_WEDDING_19,
+    full: IMG_GWEDDING_19,
+    alt: "웨딩촬영 사진19",
+  },
+  {
+    id: 20,
+    thumb: IMG_WEDDING_20,
+    full: IMG_GWEDDING_20,
+    alt: "웨딩촬영 사진20",
+  },
+  {
+    id: 21,
+    thumb: IMG_WEDDING_21,
+    full: IMG_GWEDDING_21,
+    alt: "웨딩촬영 사진21",
+  },
 ];
 const Container = styled.div({
   padding: "30px 0 0",
@@ -178,9 +202,7 @@ const ImageContianer = styled.div({
   padding: "0 15px",
   display: "grid",
   gridTemplateColumns: "1fr 1fr 1fr",
-  // gap: "5px",
-  rowGap: "2px",
-  columnGap: "5px",
+  gap: "5px",
 });
 const ImageItemContainer = styled.div({
   width: `${(375 - 30) / 3}px`,
@@ -193,6 +215,7 @@ const ImageItemContainer = styled.div({
 
 const WeddingImageItem = styled.img({
   width: "100%",
+  height: "100%",
   objectFit: "cover",
 });
 
@@ -342,6 +365,9 @@ export default function Gallery() {
                   setInitialIndex(index);
                   setIsOpen(true);
                 }}
+                // style={{
+                //   height: item.id === 13 ? "100%" : "auto",
+                // }}
               />
             </ImageItemContainer>
           )
