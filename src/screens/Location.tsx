@@ -71,6 +71,9 @@ const TransPortationTitle = styled.p({
 const TransPortationText = styled.p({
   fontSize: "16px",
   lineHeight: "24px",
+  span: {
+    textDecoration: "underline",
+  },
 });
 const SubwayItem = styled.div({
   display: "flex",
@@ -251,11 +254,9 @@ export default function Location() {
           <TransPortationTitle>🚘 자가용 이용시</TransPortationTitle>
           <SubwayItem>
             <TransPortationText>
-              명동역 밀리오레 호텔 서울 명동 건물 지하주차장
-              <br />
-              (3시간 무료이용)
-              <br />
-              교통이 혼잡하오니 대중교통이용을 권장합니다.
+              * 명동역 밀리오레 호텔 서울 명동 건물 지하주차장
+              <br />* 돌아가실때 입구에서 주차등록 필요,
+              <span>3시간 무료</span>
             </TransPortationText>
           </SubwayItem>
           <SubwayItem>

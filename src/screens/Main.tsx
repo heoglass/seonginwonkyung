@@ -109,7 +109,7 @@ export default function Main() {
       objectType: "feed",
       content: {
         title: "함성인 ❤️ 이원경 결혼합니다.",
-        description: "2026년 5월 31일 오후 12시 30분",
+        description: "2026년 5월 31일 오후 12시 30분\n온드드롬 명동",
         imageUrl: "https://seonginwonkyung.vercel.app/share/wedding-img02.jpg",
         link: {
           mobileWebUrl: "https://seonginwonkyung.vercel.app/",

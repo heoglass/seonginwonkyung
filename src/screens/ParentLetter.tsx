@@ -37,18 +37,22 @@ const ChildImage = styled.img({
 });
 
 const LetterImage1 = styled.img({
-  width: "345px",
+  // width: "345px",
+  width: "370px",
   height: "auto",
   position: "absolute",
   bottom: "-45px",
-  left: "-16px",
+  // left: "-16px",
+  left: "-34px",
 });
 const LetterImage2 = styled.img({
-  width: "345px",
+  // width: "345px",
+  width: "370px",
   height: "auto",
   position: "absolute",
   bottom: "-45px",
-  left: "-16px",
+  // left: "-16px",
+  left: "-34px",
 });
 
 export default function ParentLetter() {
