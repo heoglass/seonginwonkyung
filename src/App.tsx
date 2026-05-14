@@ -66,7 +66,7 @@ export default function App() {
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             {Screen}
