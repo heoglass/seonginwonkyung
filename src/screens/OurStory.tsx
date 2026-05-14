@@ -84,7 +84,8 @@ const BtnArea = styled.div({
 const SeeMoreBtn = styled.div({
   backgroundColor: "#FFF6C6",
   boxShadow: "0 4px 4px rgba(0,0,0,0.25)",
-  fontFamily: "InstrumentSerif-Regular",
+  // fontFamily: "InstrumentSerif-Regular",
+  fontFamily: "Dovemayo",
   padding: "12px 32px",
   marginBottom: "40px",
 });
