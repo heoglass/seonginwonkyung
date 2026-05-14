@@ -120,7 +120,7 @@ export default function OurStory() {
           <br />
           예식과 식사, 2부 행사까지
           <br />
-          약 12:30 ~ 14:30 동안 진행될 예정이며,
+          약 12:30 ~ 14:40 동안 진행될 예정이며,
           <br />
           편한 마음으로 함께 즐겨주시면 감사하겠습니다.
           <br />
@@ -133,13 +133,13 @@ export default function OurStory() {
       <MainImage src={IMG_OURSTORY} />
 
       <Description>
-        저희의 이야기가 더 궁금하시다면
+        저희 결혼식은 조금 길어요,
         <br />
-        미니 인터뷰 공간에 놀러오세요.
+        미리 식순과 시간을 안내 드립니다 !
       </Description>
 
       <BtnArea>
-        <SeeMoreBtn onClick={moveLink}>See more....❤️</SeeMoreBtn>
+        <SeeMoreBtn onClick={moveLink}>식순 보러가기 ❤️</SeeMoreBtn>
       </BtnArea>
     </Container>
   );

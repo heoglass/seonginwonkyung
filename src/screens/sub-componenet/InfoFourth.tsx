@@ -13,9 +13,14 @@ export default function InfoFourth() {
   return (
     <Container>
       <Description>
-        준비중입니다.
+        결혼식에 사용될 노래랍니다.
         <br />
-        추후 업데이트 할게요 :&#41;
+        오시는길에 편안하게 들어주세요 🎶
+        <br />
+        <br />
+        <a href="https://www.youtube.com/playlist?list=PLub2mRHS7Cho2m1UN31f2b49uAObM608m">
+          https://www.youtube.com/playlist?list=PLub2mRHS7Cho2m1UN31f2b49uAObM608m
+        </a>
       </Description>
     </Container>
   );

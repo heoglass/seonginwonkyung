@@ -7,7 +7,6 @@ import InfoFirst from "./sub-componenet/InfoFirst";
 import InfoSecond from "./sub-componenet/InfoSecond";
 import InfoThird from "./sub-componenet/InfoThird";
 import InfoFourth from "./sub-componenet/InfoFourth";
-import InfoFifth from "./sub-componenet/InfoFifth";
 
 const InfoGroup = [
   {
@@ -24,10 +23,6 @@ const InfoGroup = [
   },
   {
     id: 4,
-    title: "웨딩홀 근처 여행 가이드",
-  },
-  {
-    id: 5,
     title: "결혼식 오는길 들으면 좋은 노래 셋리스트",
   },
 ];
@@ -145,7 +140,6 @@ export default function Information() {
                     {item.id === 2 && <InfoSecond />}
                     {item.id === 3 && <InfoThird />}
                     {item.id === 4 && <InfoFourth />}
-                    {item.id === 5 && <InfoFifth />}
                   </InfoContentInner>
                 </InfoContent>
               )}
