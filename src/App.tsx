@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
-import React from "react";
+import { motion } from "framer-motion";
+
 import Main from "./screens/Main";
 import Invitation from "./screens/Invitation";
 import ParentLetter from "./screens/ParentLetter";
@@ -13,6 +14,7 @@ const Container = styled.div({
   height: "100vh",
   overflow: "hidden",
 });
+
 const InvitationContainer = styled.div({
   width: "375px",
   height: "100%",
@@ -28,18 +30,48 @@ const InvitationContainer = styled.div({
     width: "100%",
   },
 });
+
+const Section = styled(motion.section)({
+  width: "100%",
+});
+
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
+const screens = [
+  <Invitation />,
+  <SaveTheDate />,
+  <ParentLetter />,
+  <OurStory />,
+  <Gallery />,
+  <Location />,
+  <Information />,
+];
 export default function App() {
   return (
     <Container>
       <InvitationContainer>
         <Main />
-        <Invitation />
-        <SaveTheDate />
-        <ParentLetter />
-        <OurStory />
-        <Gallery />
-        <Location />
-        <Information />
+
+        {screens.map((Screen, index) => (
+          <Section
+            key={index}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            {Screen}
+          </Section>
+        ))}
       </InvitationContainer>
     </Container>
   );
